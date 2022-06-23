@@ -1,8 +1,8 @@
 /* eslint-disable react/no-invalid-html-attribute */
 import React, { useEffect, useState } from "react";
-import { IARFileEntry } from "./types";
-import ARLibrary from "./ar-objects.json";
-import NextIcon from "./next";
+import { IARFileEntry } from "../../types";
+import ARLibrary from "../../ar-objects.json";
+import NextIcon from "../../icons/next";
 
 const getNextObject = (library: IARFileEntry[]) => {
   const length = library.length - 1;
@@ -28,7 +28,7 @@ function App() {
   useEffect(() => {
     const a = document.createElement("a");
     if (a.relList.supports("ar")) {
-      setIsARReady(false);
+      setIsARReady(true);
     }
   }, []);
 

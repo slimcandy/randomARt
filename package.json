@@ -2,6 +2,14 @@
   "name": "randomar",
   "version": "0.1.0",
   "private": true,
+  "description": "Surf a wave of random art",
+  "author": "SlimCandy",
+  "keywords": [
+    "ar",
+    "ios",
+    "pwa"
+  ],
+  "homepage": "https://randomar.netlify.app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -13,6 +21,7 @@
     "daisyui": "^2.15.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.7.3",
     "web-vitals": "^2.1.4"
@@ -45,6 +54,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-helmet": "^6.1.5",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "autoprefixer": "^10.4.7",

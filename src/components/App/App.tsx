@@ -55,7 +55,7 @@ function App() {
                   </p>
                   <div className="divider" />
                   <button
-                    className="btn btn-xs btn-wide"
+                    className="btn btn-wide btn-warning"
                     type="button"
                     onClick={handleOpenClick}
                   >
@@ -84,28 +84,35 @@ function App() {
 
   return (
     <div className="hero min-h-screen bg-base-200">
-      <div className="hero-content text-center">
-        <div className="max-w-md">
-          <div className="card max-w-xs bg-base-100 shadow-xl">
-            <figure className="max-h-80 overflow-hidden">
-              <a href={randomObject.url} rel="ar" title="Open AR object">
-                <img alt={randomObject.label} src={randomObject.previewImg} />
-              </a>
-            </figure>
-            <div className="card-body items-center text-center">
-              <h2 className="card-title">{randomObject.label}</h2>
-              <p>by {randomObject.username}</p>
-              <div className="card-actions justify-end">
-                <button
-                  onClick={handleClick}
-                  type="button"
-                  className="btn btn-primary btn-wide gap-2"
-                >
-                  Next <NextIcon />
-                </button>
-              </div>
-            </div>
+      <div className="hero-content flex-col lg:flex-row text-center lg:text-start">
+        <div className="avatar">
+          <div className="w-48 lg:w-72 rounded-full ring ring-orange-300 hover:ring-orange-500 focus:ring-orange-500 active:ring-orange-500 ring-offset-base-100 ring-offset-2">
+            <a
+              href={randomObject.url}
+              rel="ar"
+              title={`Open ${randomObject.label}`}
+            >
+              <img
+                src={randomObject.previewImg}
+                alt={`${randomObject.label} by ${randomObject.username}`}
+              />
+            </a>
           </div>
+        </div>
+        <div className="max-w-md">
+          <h1 className="text-3xl font-bold">Tap on image to open AR</h1>
+          <p className="py-2 lg:py-6 text-xs">
+            {randomObject.username}:{" "}
+            <span className="font-bold">{randomObject.label}</span>
+          </p>
+          <button
+            onClick={handleClick}
+            type="button"
+            className="btn btn-warning btn-wide gap-2"
+          >
+            Next AR
+            <NextIcon />
+          </button>
         </div>
       </div>
     </div>

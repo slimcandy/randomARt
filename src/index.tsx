@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { App, Seo } from "./components";
+import { App, Footer, Seo } from "./components";
 import reportWebVitals from "./reportWebVitals";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
@@ -12,6 +12,7 @@ root.render(
   <React.StrictMode>
     <Seo />
     <App />
+    <Footer />
   </React.StrictMode>
 );
 

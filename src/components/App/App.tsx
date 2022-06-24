@@ -1,7 +1,7 @@
 /* eslint-disable react/no-invalid-html-attribute */
 import React, { useEffect, useState } from "react";
 import { IARFileEntry } from "../../types";
-import ARLibrary from "../../ar-objects.json";
+import AppleARLibrary from "../../sources/apple-collection.json";
 import NextIcon from "../../icons/next";
 
 const getNextObject = (library: IARFileEntry[]) => {
@@ -17,7 +17,7 @@ function App() {
   const [isARReady, setIsARReady] = useState(false);
 
   const setNextObject = () => {
-    const nextObject = getNextObject(ARLibrary);
+    const nextObject = getNextObject(AppleARLibrary);
     setRandomObject(nextObject);
   };
 

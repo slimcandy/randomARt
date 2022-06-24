@@ -1,0 +1,134 @@
+[
+  {
+    "previewImg": "https://developer.apple.com/augmented-reality/quick-look/models/hab/hab_2x.png",
+    "username": "apple",
+    "label": "The Hab",
+    "url": "https://developer.apple.com/augmented-reality/quick-look/models/hab/hab_en.reality"
+  },
+
+  {
+    "previewImg": "https://developer.apple.com/augmented-reality/quick-look/models/cosmonaut/cosmonaut_2x.png",
+    "username": "apple",
+    "label": "Cosmonaut",
+    "url": "https://developer.apple.com/augmented-reality/quick-look/models/cosmonaut/CosmonautSuit_en.reality"
+  },
+
+  {
+    "previewImg": "https://developer.apple.com/augmented-reality/quick-look/models/rover/rover_2x.png",
+    "username": "apple",
+    "label": "Lunar Rover",
+    "url": "https://developer.apple.com/augmented-reality/quick-look/models/rover/LunarRover_English.reality"
+  },
+
+  {
+    "previewImg": "https://developer.apple.com/augmented-reality/quick-look/models/meringue/meringue_2x.png",
+    "username": "apple",
+    "label": "meringue",
+    "url": "https://devimages-cdn.apple.com/ar/photogrammetry/LemonMeringuePie.usdz"
+  },
+
+  {
+    "previewImg": "https://developer.apple.com/augmented-reality/quick-look/models/nike-air-force/nike-air-force_2x.png",
+    "username": "apple",
+    "label": "nike air force",
+    "url": "https://devimages-cdn.apple.com/ar/photogrammetry/AirForce.usdz"
+  },
+
+  {
+    "previewImg": "https://developer.apple.com/augmented-reality/quick-look/models/nike-pegasus/nike-pegasus_2x.png",
+    "username": "apple",
+    "label": "nike pegasus",
+    "url": "https://devimages-cdn.apple.com/ar/photogrammetry/PegasusTrail.usdz"
+  },
+
+  {
+    "previewImg": "https://developer.apple.com/augmented-reality/quick-look/models/biplane/biplane_2x.jpg",
+    "username": "apple",
+    "label": "toy biplane",
+    "url": "https://developer.apple.com/augmented-reality/quick-look/models/biplane/toy_biplane.usdz"
+  },
+
+  {
+    "previewImg": "https://developer.apple.com/augmented-reality/quick-look/models/drummertoy/drummertoy_2x.jpg",
+    "username": "apple",
+    "label": "toy drummer",
+    "url": "https://developer.apple.com/augmented-reality/quick-look/models/drummertoy/toy_drummer.usdz"
+  },
+
+  {
+    "previewImg": "https://developer.apple.com/augmented-reality/quick-look/models/toycar/toycar_2x.jpg",
+    "username": "apple",
+    "label": "toy car",
+    "url": "https://developer.apple.com/augmented-reality/quick-look/models/toycar/toy_car.usdz"
+  },
+
+  {
+    "previewImg": "https://developer.apple.com/augmented-reality/quick-look/models/vintagerobot2k/vintagerobot2k_2x.jpg",
+    "username": "apple",
+    "label": "toy robot vintage",
+    "url": "https://developer.apple.com/augmented-reality/quick-look/models/vintagerobot2k/toy_robot_vintage.usdz"
+  },
+
+  {
+    "previewImg": "https://developer.apple.com/augmented-reality/quick-look/models/stratocaster/stratocaster_2x.jpg",
+    "username": "apple",
+    "label": "fender stratocaster",
+    "url": "https://developer.apple.com/augmented-reality/quick-look/models/stratocaster/fender_stratocaster.usdz"
+  },
+
+  {
+    "previewImg": "https://developer.apple.com/augmented-reality/quick-look/models/retrotv/retrotv_2x.jpg",
+    "username": "apple",
+    "label": "tv retro",
+    "url": "https://developer.apple.com/augmented-reality/quick-look/models/retrotv/tv_retro.usdz"
+  },
+
+  {
+    "previewImg": "https://developer.apple.com/augmented-reality/quick-look/models/gramophone/gramophone_2x.jpg",
+    "username": "apple",
+    "label": "gramophone",
+    "url": "https://developer.apple.com/augmented-reality/quick-look/models/gramophone/gramophone.usdz"
+  },
+
+  {
+    "previewImg": "https://developer.apple.com/augmented-reality/quick-look/models/wateringcan/wateringcan_2x.jpg",
+    "username": "apple",
+    "label": "wateringcan",
+    "url": "https://developer.apple.com/augmented-reality/quick-look/models/wateringcan/wateringcan.usdz"
+  },
+
+  {
+    "previewImg": "https://developer.apple.com/augmented-reality/quick-look/models/redchair/redchair_2x.jpg",
+    "username": "apple",
+    "label": "chair swan",
+    "url": "https://developer.apple.com/augmented-reality/quick-look/models/redchair/chair_swan.usdz"
+  },
+
+  {
+    "previewImg": "https://developer.apple.com/augmented-reality/quick-look/models/tulip/tulip_2x.jpg",
+    "username": "apple",
+    "label": "flower tulip",
+    "url": "https://developer.apple.com/augmented-reality/quick-look/models/tulip/flower_tulip.usdz"
+  },
+
+  {
+    "previewImg": "https://developer.apple.com/augmented-reality/quick-look/models/cupandsaucer/cupandsaucer_2x.jpg",
+    "username": "apple",
+    "label": "cup saucer set",
+    "url": "https://developer.apple.com/augmented-reality/quick-look/models/cupandsaucer/cup_saucer_set.usdz"
+  },
+
+  {
+    "previewImg": "https://developer.apple.com/augmented-reality/quick-look/models/teapot/teapot_2x.jpg",
+    "username": "apple",
+    "label": "teapot",
+    "url": "https://developer.apple.com/augmented-reality/quick-look/models/teapot/teapot.usdz"
+  },
+
+  {
+    "previewImg": "https://www.metmuseum.org/-/media/images/blogs/collection-insights/2020/2020_4/zemi-cohoba-stand/zemi-cohoba-stand.jpg?as=1&mh=4054&mw=3040&sc_lang=en&hash=3C450457CC2DAFB9D72F711143982B2E",
+    "username": "apple",
+    "label": "wooden deity figure (zemí) from the Caribbean",
+    "url": "https://www.metmuseum.org/-/media/ar-files/mma-ar_1979_206_380_wooddiety_audio_v1_final_max.usdz?la=en&hash=586A61E96C9C5237A4751584BAFC32A8"
+  }
+]

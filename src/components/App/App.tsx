@@ -1,6 +1,7 @@
 /* eslint-disable react/no-invalid-html-attribute */
 import React, { useEffect, useState } from "react";
 import { IARFileEntry } from "../../types";
+import ARLibrary from "../../sources/ar-objects.json";
 import AppleARLibrary from "../../sources/apple-collection.json";
 import NextIcon from "../../icons/next";
 
@@ -17,7 +18,11 @@ function App() {
   const [isARReady, setIsARReady] = useState(false);
 
   const setNextObject = () => {
-    const nextObject = getNextObject(AppleARLibrary);
+    const urlParam = new URLSearchParams(window.location.search).get("source");
+    const source: IARFileEntry[] =
+      urlParam === "usdzshare" ? ARLibrary : AppleARLibrary;
+
+    const nextObject = getNextObject(source);
     setRandomObject(nextObject);
   };
 

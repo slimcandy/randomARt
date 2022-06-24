@@ -45,7 +45,7 @@ const parseToFile = async () => {
     .invoke("attr", "href")
     .as("url")
     .then((url) => {
-      if (url.endsWith(".usdz")) {
+      if (url.endsWith(".usdz") || url.endsWith(".reality")) {
         AREntry.url = url.trim().toLowerCase();
         cy.log("Link found: ", url);
       }

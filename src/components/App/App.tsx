@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { IARFileEntry } from "../../types";
 import ARLibrary from "../../sources/ar-objects.json";
 import AppleARLibrary from "../../sources/apple-collection.json";
-import NextIcon from "../../icons/next";
 
 const getNextObject = (library: IARFileEntry[]) => {
   const length = library.length - 1;
@@ -17,16 +16,16 @@ function App() {
   const [randomObject, setRandomObject] = useState<IARFileEntry>();
   const [isARReady, setIsARReady] = useState(false);
 
-  const setNextObject = () => {
-    const urlParam = new URLSearchParams(window.location.search).get("source");
+  const setNextObject = (library: "usdzshare" | "apple" = "apple") => {
     const source: IARFileEntry[] =
-      urlParam === "usdzshare" ? ARLibrary : AppleARLibrary;
+      library === "usdzshare" ? ARLibrary : AppleARLibrary;
 
     const nextObject = getNextObject(source);
     setRandomObject(nextObject);
   };
 
-  const handleClick = () => setNextObject();
+  const handlePrimaryClick = () => setNextObject("apple");
+  const handleSecondaryClick = () => setNextObject("usdzshare");
   const handleOpenClick = () => setIsARReady(true);
 
   // Check if AR is available
@@ -111,12 +110,18 @@ function App() {
             <span className="font-bold">{randomObject.label}</span>
           </p>
           <button
-            onClick={handleClick}
+            onClick={handlePrimaryClick}
             type="button"
-            className="btn btn-warning btn-wide gap-2"
+            className="btn btn-warning"
           >
             Next AR
-            <NextIcon />
+          </button>
+          <button
+            type="button"
+            className="btn btn-link"
+            onClick={handleSecondaryClick}
+          >
+            try experimental
           </button>
         </div>
       </div>

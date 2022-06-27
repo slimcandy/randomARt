@@ -1,10 +1,10 @@
 /* eslint-disable react/no-invalid-html-attribute */
-import React, { useEffect, useState } from "react";
-import { IARFileEntry } from "../../types";
+import React, { useEffect, useRef, useState } from "react";
+import { IARFileEntry, IArMessage, TUrlParams } from "../../types";
 import ARLibrary from "../../sources/ar-objects.json";
 import AppleARLibrary from "../../sources/apple-collection.json";
 
-const getNextObject = (library: IARFileEntry[]) => {
+export const getNextObject = (library: IARFileEntry[]) => {
   const length = library.length - 1;
   const randomIndex = Math.floor(Math.random() * length);
   const randomObject: IARFileEntry = library[randomIndex];
@@ -12,34 +12,78 @@ const getNextObject = (library: IARFileEntry[]) => {
   return randomObject;
 };
 
+export const stringifyMessage = function stringifyMessage(
+  message?: IArMessage
+) {
+  if (!message) {
+    return "";
+  }
+  return Object.keys(message)
+    .map((key) => {
+      if (message[key as TUrlParams].length > 0) {
+        return `${key}=${encodeURI(message[key as TUrlParams])}`;
+      }
+      return "";
+    })
+    .join("&");
+};
+
 function App() {
   const [randomObject, setRandomObject] = useState<IARFileEntry>();
   const [isARReady, setIsARReady] = useState(false);
+  const [arMessage, setArMessage] = useState<IArMessage>();
 
-  const setNextObject = (library: "usdzshare" | "apple" = "apple") => {
+  const arLink = useRef<HTMLAnchorElement>(null);
+
+  const setNextObject = function setNextObject(
+    library: "usdzshare" | "apple" = "apple"
+  ) {
     const source: IARFileEntry[] =
       library === "usdzshare" ? ARLibrary : AppleARLibrary;
 
     const nextObject = getNextObject(source);
     setRandomObject(nextObject);
+
+    const nextArMessage: IArMessage = {
+      checkoutTitle: nextObject.label,
+      checkoutSubtitle: nextObject.username,
+      callToAction: "Next ARt",
+    };
+    setArMessage(nextArMessage);
   };
 
   const handlePrimaryClick = () => setNextObject("apple");
   const handleSecondaryClick = () => setNextObject("usdzshare");
   const handleOpenClick = () => setIsARReady(true);
 
-  // Check if AR is available
+  const innerTapHandler = function innerTapHandler(event: any) {
+    if (event.data === "_apple_ar_quicklook_button_tapped") {
+      handlePrimaryClick();
+    }
+  };
+
   useEffect(() => {
+    // Check if AR is available
     const a = document.createElement("a");
     if (a.relList.supports("ar")) {
       setIsARReady(true);
     }
-  }, []);
 
-  // Set the first object
-  useEffect(() => {
+    // Set the first object
     setNextObject();
   }, []);
+
+  // Define the AR inner tap handler
+  useEffect(() => {
+    if (arLink.current) {
+      arLink.current.addEventListener("message", innerTapHandler, false);
+    }
+    return () => {
+      if (arLink.current) {
+        arLink.current.removeEventListener("message", innerTapHandler);
+      }
+    };
+  }, [arLink]);
 
   if (!isARReady) {
     return (
@@ -92,7 +136,8 @@ function App() {
         <div className="avatar">
           <div className="w-48 lg:w-72 rounded-full ring ring-orange-300 hover:ring-orange-500 focus:ring-orange-500 active:ring-orange-500 ring-offset-base-100 ring-offset-2">
             <a
-              href={randomObject.url}
+              ref={arLink}
+              href={`${randomObject.url}#${stringifyMessage(arMessage)}`}
               rel="ar"
               title={`Open ${randomObject.label}`}
             >

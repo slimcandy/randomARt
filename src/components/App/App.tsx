@@ -1,32 +1,11 @@
 /* eslint-disable react/no-invalid-html-attribute */
 import React, { useEffect, useRef, useState } from "react";
-import { IARFileEntry, IArMessage, TUrlParams } from "../../types";
+import { IARFileEntry, IArMessage } from "./types";
 import ARLibrary from "../../sources/ar-objects.json";
 import AppleARLibrary from "../../sources/apple-collection.json";
-
-export const getNextObject = (library: IARFileEntry[]) => {
-  const length = library.length - 1;
-  const randomIndex = Math.floor(Math.random() * length);
-  const randomObject: IARFileEntry = library[randomIndex];
-
-  return randomObject;
-};
-
-export const stringifyMessage = function stringifyMessage(
-  message?: IArMessage
-) {
-  if (!message) {
-    return "";
-  }
-  return Object.keys(message)
-    .map((key) => {
-      if (message[key as TUrlParams].length > 0) {
-        return `${key}=${encodeURI(message[key as TUrlParams])}`;
-      }
-      return "";
-    })
-    .join("&");
-};
+import { getNextObject, stringifyMessage } from "./utils";
+import NotSupportedPage from "../NotSupportedPage/NotSupportedPage";
+import LoadingPage from "../LoadingPage/LoadingPage";
 
 function App() {
   const [randomObject, setRandomObject] = useState<IARFileEntry>();
@@ -86,48 +65,11 @@ function App() {
   }, [arLink]);
 
   if (!isARReady) {
-    return (
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content text-center">
-          <div className="max-w-md">
-            <div className="mockup-phone">
-              <div className="camera" />
-              <div className="display">
-                <div className="artboard artboard-demo phone-1 p-2">
-                  <h1 className="text-3xl font-bold">
-                    Your device is not compatible with AR
-                  </h1>
-                  <p className="text-lg">
-                    Please use a device with a camera that supports AR - Safari
-                    for iOS 12 and above.
-                  </p>
-                  <div className="divider" />
-                  <button
-                    className="btn btn-wide btn-warning"
-                    type="button"
-                    onClick={handleOpenClick}
-                  >
-                    Open anyway
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
+    return <NotSupportedPage onClick={handleOpenClick} />;
   }
 
   if (!randomObject) {
-    return (
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content text-center">
-          <div className="max-w-md">
-            <h1 className="text-3xl font-bold">Loading...</h1>
-          </div>
-        </div>
-      </div>
-    );
+    return <LoadingPage />;
   }
 
   return (
